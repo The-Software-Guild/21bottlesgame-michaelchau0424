@@ -45,15 +45,52 @@ public class WaterBottles21 {
 			//   and return back -1
 			 
 			//YOUR CODE STARTS HERE
-                        return -1;
+		
+		 int inputInt;
+		 try {
+			 inputInt = scanner.nextInt();
+			 if(inputInt < 1 || inputInt > 4) {
+				 throw new Exception();
+			 }
+			 return inputInt;
+		 } catch(Exception e) {
+			 this.printStream.print("As per the Game Rules, please pick up bottles between 1 and 4 only, both inclusive");
+			 return -1;
+		 }
+		 
+                        
 	                //YOUR CODE ENDS HERE	
 	 }
  
 	 
 	public int pickAfterUser(int pick1) {
-			//YOUR CODE STARTS HERE
-                        return -1;
-	                //YOUR CODE ENDS HERE
+		//YOUR CODE STARTS HERE
+		int x;
+		
+		switch(WaterBottles21.bottles - pick1) {
+			case 17:
+			case 12:
+			case 7:
+			case 2:
+				x = 1;
+				break;
+			case 18:
+			case 13:
+			case 8:
+			case 3:
+				x = 2;
+				break;
+			case 19:
+			case 14:
+			case 9:
+			case 4:
+				x = 3;
+				break;
+			default:
+				x = 4;
+		}
+		return x;
+	    //YOUR CODE ENDS HERE
 	}
 	 
 	 
